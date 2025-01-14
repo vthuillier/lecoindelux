@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full animate__animated animate__fadeInDown">
+    <h1 class="text-4xl font-bold text-center text-blue-500 mb-6">
+      🔒 Connexion Administrateur
+    </h1>
+    <p class="text-gray-600 text-center mb-8">
+      Connecte-toi pour accéder au panel d'administration.
+    </p>
+
+    <!-- Formulaire de connexion -->
+    <form (ngSubmit)="onSubmit()" class="space-y-6">
+      <!-- Champ Nom d'utilisateur -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2" for="username">Nom d'utilisateur</label>
+        <input
+          [(ngModel)]="username"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          id="username"
+          name="username"
+          placeholder="Entrez votre nom d'utilisateur"
+          required
+          type="text"
+        />
+      </div>
+
+      <!-- Champ Mot de passe -->
+      <div>
+        <label class="block text-gray-700 font-semibold mb-2" for="password">Mot de passe</label>
+        <input
+          [(ngModel)]="password"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          id="password"
+          name="password"
+          placeholder="Entrez votre mot de passe"
+          required
+          type="password"
+        />
+      </div>
+
+      <!-- Bouton de connexion -->
+      <button
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition duration-300"
+        type="submit"
+      >
+        Connexion
+      </button>
+    </form>
+  </div>
+</div>
