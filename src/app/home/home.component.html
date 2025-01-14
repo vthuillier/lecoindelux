@@ -1,0 +1,64 @@
+<!-- Page d'accueil -->
+<div class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Message de bienvenue -->
+  <section class="bg-blue-500 text-white py-16 px-6 text-center animate__animated animate__fadeInDown">
+    <h1 class="text-5xl font-extrabold tracking-widest">
+      🌟 Le coin de Lux 🌟
+    </h1>
+    <p class="mt-6 text-2xl font-light italic">
+      Le petit blog d'un développeur passionné 🖥️ et sapeur-pompier volontaire 🚒.
+    </p>
+  </section>
+
+  <!-- Introduction -->
+  <section class="py-16 px-6 flex-grow animate__animated animate__fadeInUp">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-4xl font-semibold text-gray-800 mb-6">
+        Hey toi ! 👋
+      </h2>
+      <p class="text-xl text-gray-700 leading-relaxed bg-gray-100 p-6 rounded-lg shadow-md">
+        Comment vas-tu, petit(e) aventurier(use) ?<br><br>
+        Je me présente, je m'appelle <span class="font-bold text-blue-500">Valentin THUILLIER</span> 🧑‍💻.
+        J'ai <span class="font-bold">{{ age }}</span> ans et je suis
+        <span class="font-bold">{{ job }}</span>, mais aussi fier sapeur-pompier volontaire 🚒.<br><br>
+        Ici, tu es dans mon antre, mon coin de paradis, mon coin de lumière ✨
+        (<span class="italic">Lux</span>, la lumière en latin).<br><br>
+        <span class="text-blue-500 font-bold">Ce que tu trouveras ici :</span><br>
+        - 🔍 <span class="font-semibold">Des infos pratiques</span><br>
+        - 💡 <span class="font-semibold">Des astuces inédites</span><br>
+        - 💭 <span class="font-semibold">Des idées et même... du code ! 👨‍💻</span><br><br>
+        <span class="text-red-500 font-semibold">Amuse-toi bien</span> et surtout, n'hésite pas à me poser tes questions. Je te répondrai... un jour... peut-être 😉.
+      </p>
+    </div>
+  </section>
+
+  <!-- Derniers articles -->
+  <section class="bg-gray-200 py-16 px-6 animate__animated animate__zoomIn">
+    <div class="container mx-auto max-w-5xl">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center">
+        📰 Les derniers articles
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Article -->
+        <article
+          *ngFor="let article of articles"
+          class="bg-white shadow-lg rounded-xl overflow-hidden transform transition hover:scale-105 hover:shadow-2xl"
+        >
+          <img
+            [src]="article.image"
+            [alt]="article.title"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+              {{ article.title }} ✍️
+            </h3>
+            <p class="text-gray-600 text-lg leading-relaxed line-clamp-3">
+              {{ article.content }}
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
